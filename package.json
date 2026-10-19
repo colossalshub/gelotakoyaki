@@ -1,0 +1,48 @@
+{
+  "name": "gelos-inventory",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Inventory control for Gelos Takoyaki — two branches, one auditable ledger.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "db:migrate": "prisma migrate deploy",
+    "db:dev": "prisma migrate dev",
+    "bootstrap": "node --env-file=.env --import tsx scripts/bootstrap.ts",
+    "create-owner": "node --env-file=.env --import tsx scripts/create-owner.ts",
+    "reconcile": "node --env-file=.env --import tsx scripts/reconcile.ts",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.2.5",
+    "@fontsource/ibm-plex-sans": "^5.2.5",
+    "@prisma/client": "6.19.3",
+    "bcryptjs": "^3.0.2",
+    "date-fns": "^4.1.0",
+    "date-fns-tz": "^3.2.0",
+    "decimal.js": "^10.5.0",
+    "next": "16.4.2",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "eslint": "^9.28.0",
+    "eslint-config-next": "16.4.2",
+    "prisma": "6.19.3",
+    "tailwindcss": "^4.1.11",
+    "@tailwindcss/postcss": "^4.1.11",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
